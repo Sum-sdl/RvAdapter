@@ -1,1 +1,1 @@
-include ':app', ':AdapterLibrary'
+include ':smaple', ':AdapterLibrary'
