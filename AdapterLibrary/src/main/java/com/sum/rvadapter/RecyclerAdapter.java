@@ -1,6 +1,6 @@
 package com.sum.rvadapter;
 
-import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.View;
@@ -10,23 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  Created by sdl on 2017/12/29.
+ * Created by sdl on 2016/8/29.
+ * 统一适配器
  */
 public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends RecyclerView.Adapter<ViewHolder> {
 
-    private Context mContext = null;
     private List<DataHolder> mHolders;
     private int mCurPosition;
 
-    public RecyclerAdapter(Context context) {
-        this(context, null);
+    public RecyclerAdapter() {
+        this(null);
         mHolders = new ArrayList<>();
     }
 
-    public RecyclerAdapter(Context context, List<DataHolder> holders) {
-        if (context == null)
-            throw new NullPointerException();
-        mContext = context;
+    public RecyclerAdapter(List<DataHolder> holders) {
         if (holders != null) {
             mHolders = new ArrayList<>(holders.size() + 10);
             mHolders.addAll(holders);
@@ -80,12 +77,12 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         }
     }
 
-    public DataHolder queryDataHolder(int location) {
-        return mHolders.get(location);
+    public List<DataHolder> getDataHoders() {
+        return mHolders;
     }
 
-    public int queryDataHolder(DataHolder holder) {
-        return mHolders.indexOf(holder);
+    private DataHolder queryDataHolder(int location) {
+        return mHolders.get(location);
     }
 
     @Override
@@ -105,16 +102,16 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
     }
 
     @Override
-    public final ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        RecyclerDataHolder<DataHolder> holder = queryDataHolder(mCurPosition);
-        View view = holder.onCreateView(mContext, parent);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        DataHolder holder = queryDataHolder(mCurPosition);
+        View view = holder.onCreateView(parent.getContext(), parent);
         return holder.onCreateViewHolder(view, mCurPosition);
     }
 
     @Override
-    public final void onBindViewHolder(ViewHolder arg0, int position) {
-        RecyclerDataHolder<DataHolder> holder = queryDataHolder(position);
-        holder.onBindViewHolder(mContext, position, arg0, holder.getData());
+    public void onBindViewHolder(@NonNull ViewHolder vHolder, int position) {
+        DataHolder holder = queryDataHolder(position);
+        holder.onBindViewHolder(position, vHolder, holder.getData());
     }
 
 }

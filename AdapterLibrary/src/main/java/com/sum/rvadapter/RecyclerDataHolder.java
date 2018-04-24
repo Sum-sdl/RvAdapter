@@ -6,9 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Created by sdl on 2016/8/29.
+ * 统一预处理的数据源,对应一个缓存中的ViewType
+ */
 public abstract class RecyclerDataHolder<T> {
 
-    private T mData = null;
+    private T mData;
     private int mId;
 
     public RecyclerDataHolder(T data) {
@@ -20,15 +24,16 @@ public abstract class RecyclerDataHolder<T> {
         return mId;
     }
 
-    public abstract int getLayoutId();
+    public abstract int getItemViewLayoutId();
 
+    //统一创建viewHolder的content view
     public View onCreateView(Context context, ViewGroup parent) {
-        return LayoutInflater.from(context).inflate(getLayoutId(), parent, false);
+        return LayoutInflater.from(context).inflate(getItemViewLayoutId(), parent, false);
     }
 
-    public abstract ViewHolder onCreateViewHolder(View contentView, int position);
+    public abstract ViewHolder onCreateViewHolder(View itemView, int position);
 
-    public abstract void onBindViewHolder(Context context, int position, ViewHolder vHolder, T data);
+    public abstract void onBindViewHolder(int position, ViewHolder vHolder, T data);
 
     public int getType() {
         return 0;
@@ -36,9 +41,5 @@ public abstract class RecyclerDataHolder<T> {
 
     public T getData() {
         return mData;
-    }
-
-    public View LayoutInflate(int resId, Context context, ViewGroup parent) {
-        return LayoutInflater.from(context).inflate(resId, parent, false);
     }
 }
