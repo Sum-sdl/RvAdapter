@@ -1,4 +1,4 @@
-package com.sum.rvadapter.listener;
+package com.sum.lib.rvadapter.listener;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

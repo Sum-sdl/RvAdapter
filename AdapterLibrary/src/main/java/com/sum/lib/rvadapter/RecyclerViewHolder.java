@@ -1,4 +1,4 @@
-package com.sum.rvadapter;
+package com.sum.lib.rvadapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

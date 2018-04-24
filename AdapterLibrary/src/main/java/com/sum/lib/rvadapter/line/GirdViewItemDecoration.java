@@ -1,4 +1,4 @@
-package com.sum.rvadapter.line;
+package com.sum.lib.rvadapter.line;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -1,12 +1,12 @@
-package com.sum.rvadapter.sticky;
+package com.sum.lib.rvadapter.sticky;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sum.rvadapter.RecyclerAdapter;
-import com.sum.rvadapter.RecyclerDataHolder;
+import com.sum.lib.rvadapter.RecyclerAdapter;
+import com.sum.lib.rvadapter.RecyclerDataHolder;
 
 import java.util.List;
 

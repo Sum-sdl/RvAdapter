@@ -1,4 +1,4 @@
-package com.sum.rvadapter.sticky;
+package com.sum.lib.rvadapter.sticky;
 
 import android.view.View;
 import android.view.ViewGroup;

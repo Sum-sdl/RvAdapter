@@ -1,4 +1,4 @@
-package com.sum.rvadapter.manager;
+package com.sum.lib.rvadapter.manager;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;

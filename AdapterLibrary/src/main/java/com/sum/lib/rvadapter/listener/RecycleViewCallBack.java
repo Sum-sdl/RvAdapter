@@ -1,4 +1,4 @@
-package com.sum.rvadapter.listener;
+package com.sum.lib.rvadapter.listener;
 
 /**
  * Created by Sum on 15/11/27.
