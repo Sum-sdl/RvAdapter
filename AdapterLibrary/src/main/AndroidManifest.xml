@@ -1,2 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sum.rvadapter.library" />
+    package="com.sum.lib.rvadapter" />
