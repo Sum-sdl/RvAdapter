@@ -20,7 +20,8 @@
         <activity
             android:name=".MulitActivity"
             android:label="@string/title_activity_mulit"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SimpleActivity"></activity>
     </application>
 
 </manifest>
