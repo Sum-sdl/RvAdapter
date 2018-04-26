@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RvAdapter</string>
+    <string name="title_activity_mulit">MulitActivity</string>
 </resources>

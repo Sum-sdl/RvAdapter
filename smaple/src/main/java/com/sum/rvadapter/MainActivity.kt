@@ -1,12 +1,14 @@
 package com.sum.rvadapter
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import com.sum.library.app.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun initParams() {
 
     }
+
+    override fun getLayoutId(): Int = R.layout.activity_mulit
+
 }
