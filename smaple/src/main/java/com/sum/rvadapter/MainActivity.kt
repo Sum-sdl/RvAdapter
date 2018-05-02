@@ -13,6 +13,10 @@ class MainActivity : BaseActivity() {
             startActivity(Intent(this@MainActivity,SimpleActivity::class.java))
         }
 
+        btn_2.setOnClickListener {
+            startActivity(Intent(this@MainActivity,MulitActivity::class.java))
+        }
+
     }
 
     override fun getLayoutId(): Int = R.layout.activity_main

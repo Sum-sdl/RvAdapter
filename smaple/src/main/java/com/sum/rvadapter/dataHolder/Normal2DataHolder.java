@@ -9,12 +9,11 @@ import com.sum.lib.rvadapter.RecyclerViewHolder;
 import com.sum.rvadapter.R;
 
 /**
- * Created by sdl on 2018/4/26.
- * 普通的list界面 item的一项
+ * Created by sdl on 2018/5/2.
  */
-public class NormalDataHolder extends RecyclerDataHolder<Object> {
+public class Normal2DataHolder extends RecyclerDataHolder<Object> {
 
-    public NormalDataHolder(Object data) {
+    public Normal2DataHolder(Object data) {
         super(data);
     }
 
@@ -23,12 +22,12 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
     // 多种不一样的Item，需要配置不一样的type，一个type对应一个内容View
     @Override
     public int getType() {
-        return super.getType();
+        return 1;
     }
 
     @Override
     public int getItemViewLayoutId() {//方便开发直接配置布局
-        return R.layout.vh_normal_item;
+        return R.layout.vh_normal2_item;
     }
 
     //创建ViewHolder的内容，只会调用一定次数，超出屏幕的都是缓存的View
@@ -45,7 +44,7 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
         //TODO 给组合View设置参数操作;思考怎么避免重复操作
         holder.setData();
 
-        holder.tv_index.setText("onBindViewHolder pos:" + i + ";holder type:" + getType());
+        holder.tv_index.setText("DataHolder2 onBindViewHolder POS:" + i + ",Type:" + getType());
     }
 
     //该ViewHolder就是RecyclerView的每个内容View
