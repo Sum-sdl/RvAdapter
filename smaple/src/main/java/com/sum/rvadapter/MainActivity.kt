@@ -17,6 +17,10 @@ class MainActivity : BaseActivity() {
             startActivity(Intent(this@MainActivity,MulitActivity::class.java))
         }
 
+        btn_3.setOnClickListener {
+            startActivity(Intent(this@MainActivity,StickActivity::class.java))
+        }
+
     }
 
     override fun getLayoutId(): Int = R.layout.activity_main
