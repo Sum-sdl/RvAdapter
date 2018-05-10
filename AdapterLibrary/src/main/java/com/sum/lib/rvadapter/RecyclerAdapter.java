@@ -111,6 +111,7 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
     @Override
     public void onBindViewHolder(@NonNull ViewHolder vHolder, int position) {
         DataHolder holder = queryDataHolder(position);
+        holder.addRecyclerAdapter(this);
         holder.onBindViewHolder(position, vHolder, holder.getData());
     }
 

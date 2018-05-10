@@ -14,6 +14,7 @@ public abstract class RecyclerDataHolder<T> {
 
     private T mData;
     private int mId;
+    private RecyclerAdapter mAdapter;
 
     public RecyclerDataHolder(T data) {
         mData = data;
@@ -34,6 +35,14 @@ public abstract class RecyclerDataHolder<T> {
     public abstract ViewHolder onCreateViewHolder(View itemView, int position);
 
     public abstract void onBindViewHolder(int position, ViewHolder vHolder, T data);
+
+    public void addRecyclerAdapter(RecyclerAdapter adapter) {
+        mAdapter = adapter;
+    }
+
+    public RecyclerAdapter getRecyclerAdapter() {
+        return mAdapter;
+    }
 
     public int getType() {
         return 0;

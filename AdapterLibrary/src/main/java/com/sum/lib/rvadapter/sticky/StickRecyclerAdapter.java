@@ -1,6 +1,5 @@
 package com.sum.lib.rvadapter.sticky;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,7 @@ public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<RecyclerDa
         super();
     }
 
-    public StickRecyclerAdapter(Context context, List<RecyclerDataHolder<T>> recyclerDataHolders) {
+    public StickRecyclerAdapter(List<RecyclerDataHolder<T>> recyclerDataHolders) {
         super(recyclerDataHolders);
     }
 
