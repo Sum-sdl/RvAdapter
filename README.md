@@ -15,7 +15,7 @@ Step 1. 在build.config文件添加远程库地址
 Step 2. 添加远程库依赖
 
 	dependencies {
-	        implementation 'com.github.Sum-sdl:RvAdapter:1.0.3'
+	        implementation 'com.github.Sum-sdl:RvAdapter:1.0.4'
 	}
 
 
