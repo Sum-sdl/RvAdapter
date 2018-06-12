@@ -2,7 +2,6 @@ package com.sum.rvadapter
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import com.sum.lib.rvadapter.RecyclerAdapter
 import com.sum.lib.rvadapter.RecyclerDataHolder
 import com.sum.rvadapter.dataHolder.NormalDataHolder
@@ -15,22 +14,20 @@ class SimpleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_simple)
 
         val adapter = RecyclerAdapter<RecyclerDataHolder<*>>()
-        rv_simple.layoutManager = LinearLayoutManager(this)
+//        rv_simple.layoutManager = LinearLayoutManager(this)
+        rv_simple.layoutManager = FullGridViewManager(this, 1)
         rv_simple.adapter = adapter
+        rv_simple.isNestedScrollingEnabled = false
 
+
+        btn_refresh2.setOnClickListener { rv_simple.layoutManager = FullGridViewManager(this, 3) }
+        btn_refresh.setOnClickListener { adapter.notifyDataSetChanged() }
 
         //适配器添加统一类型的Item
         val list = arrayListOf<RecyclerDataHolder<*>>()
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
-        list.add(NormalDataHolder(null))
+        for (i in 1..10) {
+            list.add(NormalDataHolder(i))
+        }
         adapter.setDataHolders(list)
 
     }

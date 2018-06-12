@@ -1,6 +1,7 @@
 package com.sum.rvadapter.dataHolder;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -34,6 +35,7 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
     //创建ViewHolder的内容，只会调用一定次数，超出屏幕的都是缓存的View
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(View view, int i) {
+        Log.e("tag", "onCreateViewHolder->" + i);
         return new ViewHolder(view);
     }
 
@@ -44,7 +46,7 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
         //展示的数据源通过泛型Object传递给ViewHolder
         //TODO 给组合View设置参数操作;思考怎么避免重复操作
         holder.setData();
-
+        Log.e("tag", "onBindViewHolder->" + i);
         holder.tv_index.setText("onBindViewHolder pos:" + i + ";holder type:" + getType());
     }
 
