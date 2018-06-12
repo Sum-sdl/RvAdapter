@@ -15,6 +15,8 @@ class SimpleActivity : AppCompatActivity() {
 
         val adapter = RecyclerAdapter<RecyclerDataHolder<*>>()
 //        rv_simple.layoutManager = LinearLayoutManager(this)
+        //高度自动计算的布局用来代替部分一次性展示场景
+        //性能优化，最费时的是view实例化过程
         rv_simple.layoutManager = FullGridViewManager(this, 1)
         rv_simple.adapter = adapter
         rv_simple.isNestedScrollingEnabled = false
