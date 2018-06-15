@@ -16,7 +16,9 @@ class SimpleActivity : AppCompatActivity() {
         val adapter = RecyclerAdapter<RecyclerDataHolder<*>>()
 //        rv_simple.layoutManager = LinearLayoutManager(this)
         //高度自动计算的布局用来代替部分一次性展示场景
-        //性能优化，最费时的是view实例化过程
+        //性能优化，最费时的是view实例化过程和计算测量
+        //经过测试，RecyclerView不需要手动设置布局高度，在NestedScrollView中高度设置warp_content即可
+        //ScrollView中无效
         rv_simple.layoutManager = FullGridViewManager(this, 1)
         rv_simple.adapter = adapter
         rv_simple.isNestedScrollingEnabled = false
@@ -27,7 +29,7 @@ class SimpleActivity : AppCompatActivity() {
 
         //适配器添加统一类型的Item
         val list = arrayListOf<RecyclerDataHolder<*>>()
-        for (i in 1..10) {
+        for (i in 1..100) {
             list.add(NormalDataHolder(i))
         }
         adapter.setDataHolders(list)
