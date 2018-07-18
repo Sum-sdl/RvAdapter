@@ -25,7 +25,10 @@ public abstract class RecyclerDataHolder<T> {
         return mId;
     }
 
-    public abstract int getItemViewLayoutId();
+    /**
+     * @return 列表item的layout布局id
+     */
+    protected abstract int getItemViewLayoutId();
 
     //统一创建viewHolder的content view
     public View onCreateView(Context context, ViewGroup parent) {
@@ -34,7 +37,7 @@ public abstract class RecyclerDataHolder<T> {
 
     public abstract ViewHolder onCreateViewHolder(View itemView, int position);
 
-    public abstract void onBindViewHolder(int position, ViewHolder vHolder, T data);
+    public abstract void onBindViewHolder(int position, ViewHolder viewHolder, T data);
 
     public void addRecyclerAdapter(RecyclerAdapter adapter) {
         mAdapter = adapter;
@@ -45,7 +48,7 @@ public abstract class RecyclerDataHolder<T> {
     }
 
     public int getType() {
-        return 0;
+        return getItemViewLayoutId();
     }
 
     public T getData() {

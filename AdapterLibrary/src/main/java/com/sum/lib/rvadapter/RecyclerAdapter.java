@@ -101,8 +101,9 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         return queryDataHolder(position).getType();
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         DataHolder holder = queryDataHolder(mCurPosition);
         View view = holder.onCreateView(parent.getContext(), parent);
         return holder.onCreateViewHolder(view, mCurPosition);
