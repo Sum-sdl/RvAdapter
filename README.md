@@ -1,7 +1,7 @@
 # RvAdapter
 RecyclerView 通用适配器框架结构封装
 
-[![](https://jitpack.io/v/chrisbanes/PhotoView.svg)](https://jitpack.io/#chrisbanes/PhotoView) [![Build status](https://ci.appveyor.com/api/projects/status/bv0oc6hhf6d9dhur?svg=true)](https://ci.appveyor.com/project/Jawnnypoo/photoview)
+[![](https://jitpack.io/v/Sum-sdl/RvAdapter.svg)](https://jitpack.io/#Sum-sdl/RvAdapter)
 
  ## Dependency
  
