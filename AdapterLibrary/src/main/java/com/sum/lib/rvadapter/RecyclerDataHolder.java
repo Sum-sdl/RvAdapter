@@ -36,7 +36,7 @@ public abstract class RecyclerDataHolder<T> {
 
     protected abstract void onBindViewHolder(int position, RecyclerView.ViewHolder viewHolder, T data);
 
-    View onCreateView(Context context, ViewGroup parent) {
+    protected View onCreateView(Context context, ViewGroup parent) {
         return LayoutInflater.from(context).inflate(getItemViewLayoutId(), parent, false);
     }
 
