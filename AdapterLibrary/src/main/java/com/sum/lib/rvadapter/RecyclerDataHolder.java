@@ -12,13 +12,13 @@ import android.view.ViewGroup;
  * @author sdl
  * @date 2016/8/29
  */
-public abstract class BaseRecyclerDataHolder<T> {
+public abstract class RecyclerDataHolder<T> {
 
     private T mData;
     private int mId;
     private RecyclerAdapter mAdapter;
 
-    public BaseRecyclerDataHolder(T data) {
+    public RecyclerDataHolder(T data) {
         mData = data;
         mId = super.hashCode();
     }
@@ -28,27 +28,27 @@ public abstract class BaseRecyclerDataHolder<T> {
     }
 
     /**
-     * @return 列表item的layout布局id
+     * 列表item的layout布局id
      */
     protected abstract int getItemViewLayoutId();
 
-    public View onCreateView(Context context, ViewGroup parent) {
+    View onCreateView(Context context, ViewGroup parent) {
         return LayoutInflater.from(context).inflate(getItemViewLayoutId(), parent, false);
     }
 
-    public abstract ViewHolder onCreateViewHolder(View itemView, int position);
+    protected abstract ViewHolder onCreateViewHolder(View itemView, int position);
 
-    public abstract void onBindViewHolder(int position, ViewHolder viewHolder, T data);
+    protected abstract void onBindViewHolder(int position, ViewHolder viewHolder, T data);
 
-    public void addRecyclerAdapter(RecyclerAdapter adapter) {
+    void addRecyclerAdapter(RecyclerAdapter adapter) {
         mAdapter = adapter;
     }
 
-    public RecyclerAdapter getRecyclerAdapter() {
+    protected RecyclerAdapter getRecyclerAdapter() {
         return mAdapter;
     }
 
-    public int getType() {
+     int getType() {
         return getItemViewLayoutId();
     }
 

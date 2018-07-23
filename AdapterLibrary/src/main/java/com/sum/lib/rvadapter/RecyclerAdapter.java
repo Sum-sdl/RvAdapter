@@ -14,14 +14,14 @@ import java.util.List;
  * @date 2016/8/29
  * 全局通用适配器
  */
-public class RecyclerAdapter<DataHolder extends BaseRecyclerDataHolder> extends RecyclerView.Adapter<ViewHolder> {
+public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends RecyclerView.Adapter<ViewHolder> {
 
     private List<DataHolder> mHolders;
     private int mCurPosition;
 
     public RecyclerAdapter() {
-        this(null);
         mHolders = new ArrayList<>();
+        setHasStableIds(true);
     }
 
     public RecyclerAdapter(List<DataHolder> holders) {
@@ -104,14 +104,14 @@ public class RecyclerAdapter<DataHolder extends BaseRecyclerDataHolder> extends 
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public final ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         DataHolder holder = queryDataHolder(mCurPosition);
         View view = holder.onCreateView(parent.getContext(), parent);
         return holder.onCreateViewHolder(view, mCurPosition);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder vHolder, int position) {
+    public final void onBindViewHolder(@NonNull ViewHolder vHolder, int position) {
         DataHolder holder = queryDataHolder(position);
         holder.addRecyclerAdapter(this);
         holder.onBindViewHolder(position, vHolder, holder.getData());
