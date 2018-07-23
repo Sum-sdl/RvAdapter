@@ -17,14 +17,6 @@ public class Normal2DataHolder extends RecyclerDataHolder<Object> {
         super(data);
     }
 
-
-    //一个type值，对应一组类型的ViewHolder，同一种内容的View
-    // 多种不一样的Item，需要配置不一样的type，一个type对应一个内容View
-    @Override
-    public int getType() {
-        return 1;
-    }
-
     @Override
     public int getItemViewLayoutId() {//方便开发直接配置布局
         return R.layout.vh_normal2_item;
@@ -44,7 +36,7 @@ public class Normal2DataHolder extends RecyclerDataHolder<Object> {
         //TODO 给组合View设置参数操作;思考怎么避免重复操作
         holder.setData();
 
-        holder.tv_index.setText("DataHolder2 onBindViewHolder POS:" + i + ",Type:" + getType());
+        holder.tv_index.setText("DataHolder2 onBindViewHolder POS:" + i);
     }
 
     //该ViewHolder就是RecyclerView的每个内容View

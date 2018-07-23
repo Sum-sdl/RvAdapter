@@ -23,7 +23,7 @@ public abstract class RecyclerDataHolder<T> {
         mId = super.hashCode();
     }
 
-    public int getId() {
+    int getId() {
         return mId;
     }
 
@@ -48,7 +48,7 @@ public abstract class RecyclerDataHolder<T> {
         return mAdapter;
     }
 
-     int getType() {
+    int getType() {
         return getItemViewLayoutId();
     }
 

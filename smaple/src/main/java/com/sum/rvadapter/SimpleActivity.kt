@@ -2,6 +2,7 @@ package com.sum.rvadapter
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import com.sum.lib.rvadapter.RecyclerAdapter
 import com.sum.lib.rvadapter.RecyclerDataHolder
 import com.sum.rvadapter.dataHolder.NormalDataHolder
@@ -19,12 +20,12 @@ class SimpleActivity : AppCompatActivity() {
         //性能优化，最费时的是view实例化过程和计算测量
         //经过测试，RecyclerView不需要手动设置布局高度，在NestedScrollView中高度设置warp_content即可
         //ScrollView中无效
-        rv_simple.layoutManager = FullGridViewManager(this, 1)
+        rv_simple.layoutManager = GridLayoutManager(this, 1)
         rv_simple.adapter = adapter
         rv_simple.isNestedScrollingEnabled = false
 
 
-        btn_refresh2.setOnClickListener { rv_simple.layoutManager = FullGridViewManager(this, 3) }
+        btn_refresh2.setOnClickListener { rv_simple.layoutManager = GridLayoutManager(this, 3) }
         btn_refresh.setOnClickListener { adapter.notifyDataSetChanged() }
 
         //适配器添加统一类型的Item
