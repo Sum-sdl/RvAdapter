@@ -23,7 +23,7 @@ class StickActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_simple)
+        setContentView(R.layout.activity_mulit)
 
 
         val adapter = RecyclerAdapter<RecyclerDataHolder<*>>()
@@ -33,9 +33,11 @@ class StickActivity : AppCompatActivity() {
 
             override fun onBindHeadView(view: View, p1: Int) {
                 val res = adapter.dataHoders[p1].data
+                val tv = view.findViewById<TextView>(R.id.tv_index)
                 if (res is String) {
-                    val tv = view.findViewById<TextView>(R.id.tv_index)
                     tv.text = "head:" + res
+                } else {
+                    tv.text = "head" + p1
                 }
             }
 
@@ -56,16 +58,16 @@ class StickActivity : AppCompatActivity() {
 
         //适配器添加统一类型的Item
         val list = arrayListOf<RecyclerDataHolder<*>>()
-        list.add(StickDataHolder("1"))
-        list.add(StickDataHolder("1"))
-        list.add(StickDataHolder("1"))
-        list.add(NormalDataHolder("1"))
-        list.add(NormalDataHolder("1"))
+        list.add(StickDataHolder("a"))
+        list.add(StickDataHolder("a"))
+        list.add(StickDataHolder("a"))
+        list.add(NormalDataHolder("a"))
+        list.add(NormalDataHolder("b"))
         list.add(NormalDataHolder("2"))
         list.add(NormalDataHolder("2"))
         list.add(StickDataHolder("2"))
-        list.add(StickDataHolder("1"))
-        list.add(StickDataHolder("1"))
+        list.add(StickDataHolder("b"))
+        list.add(StickDataHolder("b"))
         list.add(NormalDataHolder("3"))
         list.add(StickDataHolder("3"))
         list.add(StickDataHolder("3"))

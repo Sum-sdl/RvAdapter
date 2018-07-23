@@ -1,7 +1,7 @@
 package com.sum.lib.rvadapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,13 +32,13 @@ public abstract class RecyclerDataHolder<T> {
      */
     protected abstract int getItemViewLayoutId();
 
+    protected abstract RecyclerView.ViewHolder onCreateViewHolder(View itemView, int position);
+
+    protected abstract void onBindViewHolder(int position, RecyclerView.ViewHolder viewHolder, T data);
+
     View onCreateView(Context context, ViewGroup parent) {
         return LayoutInflater.from(context).inflate(getItemViewLayoutId(), parent, false);
     }
-
-    protected abstract ViewHolder onCreateViewHolder(View itemView, int position);
-
-    protected abstract void onBindViewHolder(int position, ViewHolder viewHolder, T data);
 
     void addRecyclerAdapter(RecyclerAdapter adapter) {
         mAdapter = adapter;
@@ -48,7 +48,7 @@ public abstract class RecyclerDataHolder<T> {
         return mAdapter;
     }
 
-    int getType() {
+    protected int getType() {
         return getItemViewLayoutId();
     }
 

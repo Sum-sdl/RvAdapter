@@ -13,7 +13,7 @@ class MulitActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_simple)
+        setContentView(R.layout.activity_mulit)
 
 
         val adapter = RecyclerAdapter<RecyclerDataHolder<*>>()

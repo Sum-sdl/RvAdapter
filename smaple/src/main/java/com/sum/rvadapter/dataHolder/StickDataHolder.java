@@ -21,7 +21,7 @@ public class StickDataHolder extends RecyclerDataHolder<Object> {
 
     @Override
     public int getItemViewLayoutId() {//方便开发直接配置布局
-        return R.layout.vh_normal_item;
+        return R.layout.vh_normal_stick;
     }
 
     //创建ViewHolder的内容，只会调用一定次数，超出屏幕的都是缓存的View
@@ -38,7 +38,7 @@ public class StickDataHolder extends RecyclerDataHolder<Object> {
         //TODO 给组合View设置参数操作;思考怎么避免重复操作
         holder.setData();
 
-        holder.tv_index.setText("粘性列表 pos:" + i);
+        holder.tv_index.setText("粘性列表 pos:" + i + "," + o.toString());
     }
 
     //该ViewHolder就是RecyclerView的每个内容View
