@@ -11,15 +11,22 @@ import android.view.View;
 public abstract class OnPageScrollListener extends OnScrollListener {
 
     private LinearLayoutManager mManager;
-    private int mRemainingCount;//用作提前几个到底部
+    /**
+     * 用作提前几个到底部
+     */
+    private int mRemainingCount;
 
     public OnPageScrollListener(LinearLayoutManager manager) {
         this(manager, 0);
     }
 
     public OnPageScrollListener(LinearLayoutManager manager, int remainingCount) {
-        if (manager == null) throw new NullPointerException("manager == null");
-        if (remainingCount < 0) throw new IllegalArgumentException("remainingCount < 0");
+        if (manager == null) {
+            throw new NullPointerException("manager == null");
+        }
+        if (remainingCount < 0) {
+            throw new IllegalArgumentException("remainingCount < 0");
+        }
         this.mManager = manager;
         this.mRemainingCount = remainingCount;
     }

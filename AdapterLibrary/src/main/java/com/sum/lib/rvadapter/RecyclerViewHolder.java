@@ -12,16 +12,16 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public Context mContext;
 
-    private View mParent;
+    private View mRootView;
 
     public RecyclerViewHolder(View view) {
         super(view);
-        mParent = view;
+        mRootView = view;
         mContext = view.getContext();
     }
 
     public <T extends View> T findViewById(int id) {
-        return mParent.findViewById(id);
+        return mRootView.findViewById(id);
     }
 
 }

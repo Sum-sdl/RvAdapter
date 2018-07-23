@@ -10,10 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by sdl on 2016/8/29.
- * 统一适配器
+ * @author sdl
+ * @date 2016/8/29
+ * 全局通用适配器
  */
-public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends RecyclerView.Adapter<ViewHolder> {
+public class RecyclerAdapter<DataHolder extends BaseRecyclerDataHolder> extends RecyclerView.Adapter<ViewHolder> {
 
     private List<DataHolder> mHolders;
     private int mCurPosition;
@@ -32,9 +33,9 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
     }
 
     public void setDataHolders(List<DataHolder> holders) {
-        if (holders == null)
+        if (holders == null) {
             mHolders = new ArrayList<>();
-        else {
+        } else {
             mHolders = new ArrayList<>(holders.size() + 10);
             mHolders.addAll(holders);
         }

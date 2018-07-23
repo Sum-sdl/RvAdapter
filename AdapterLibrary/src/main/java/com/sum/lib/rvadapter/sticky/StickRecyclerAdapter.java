@@ -5,20 +5,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sum.lib.rvadapter.RecyclerAdapter;
-import com.sum.lib.rvadapter.RecyclerDataHolder;
+import com.sum.lib.rvadapter.BaseRecyclerDataHolder;
 
 import java.util.List;
 
 /**
  * Created by Summer on 2016/8/27.
  */
-public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<RecyclerDataHolder<T>> implements StickyHeadView {
+public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<BaseRecyclerDataHolder<T>> implements StickyHeadView {
 
     public StickRecyclerAdapter() {
         super();
     }
 
-    public StickRecyclerAdapter(List<RecyclerDataHolder<T>> recyclerDataHolders) {
+    public StickRecyclerAdapter(List<BaseRecyclerDataHolder<T>> recyclerDataHolders) {
         super(recyclerDataHolders);
     }
 

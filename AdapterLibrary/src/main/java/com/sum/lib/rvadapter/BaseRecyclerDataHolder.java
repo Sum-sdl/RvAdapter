@@ -7,16 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by sdl on 2016/8/29.
  * 统一预处理的数据源,对应一个缓存中的ViewType
+ *
+ * @author sdl
+ * @date 2016/8/29
  */
-public abstract class RecyclerDataHolder<T> {
+public abstract class BaseRecyclerDataHolder<T> {
 
     private T mData;
     private int mId;
     private RecyclerAdapter mAdapter;
 
-    public RecyclerDataHolder(T data) {
+    public BaseRecyclerDataHolder(T data) {
         mData = data;
         mId = super.hashCode();
     }
@@ -30,7 +32,6 @@ public abstract class RecyclerDataHolder<T> {
      */
     protected abstract int getItemViewLayoutId();
 
-    //统一创建viewHolder的content view
     public View onCreateView(Context context, ViewGroup parent) {
         return LayoutInflater.from(context).inflate(getItemViewLayoutId(), parent, false);
     }
@@ -53,5 +54,9 @@ public abstract class RecyclerDataHolder<T> {
 
     public T getData() {
         return mData;
+    }
+
+    public void updateData(T newData) {
+        mData = newData;
     }
 }
