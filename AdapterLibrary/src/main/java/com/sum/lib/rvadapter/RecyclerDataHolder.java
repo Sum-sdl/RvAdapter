@@ -18,6 +18,8 @@ public abstract class RecyclerDataHolder<T> {
     private int mId;
     private RecyclerAdapter mAdapter;
 
+    boolean mHasBindView = false;
+
     public RecyclerDataHolder(T data) {
         mData = data;
         mId = super.hashCode();
@@ -25,6 +27,13 @@ public abstract class RecyclerDataHolder<T> {
 
     int getId() {
         return mId;
+    }
+
+    /**
+     * onBindViewHolder只绑定一次(适用于一个单个view对应一个数据项，可以避免多次刷新)
+     */
+    protected boolean isSingleBindView() {
+        return false;
     }
 
     /**
@@ -56,7 +65,13 @@ public abstract class RecyclerDataHolder<T> {
         return mData;
     }
 
-    public void updateData(T newData) {
+    public RecyclerDataHolder updateData(T newData) {
         mData = newData;
+        mHasBindView = false;
+        return this;
+    }
+
+    public void resetBindView() {
+        mHasBindView = false;
     }
 }
