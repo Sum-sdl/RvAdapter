@@ -35,5 +35,9 @@ class SimpleActivity : AppCompatActivity() {
         }
         adapter.setDataHolders(list)
 
+        //TODO 该方法放大ViewHolder的缓存，在数据量大的时候，快速滚动的时候可以适当调整缓存的数量，充分利用缓存，减少view的动态创建
+        // setMaxRecycledViews
+        rv_simple.recycledViewPool.setMaxRecycledViews(0, 100)
+
     }
 }
