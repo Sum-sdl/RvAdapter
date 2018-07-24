@@ -36,6 +36,9 @@ class SimpleActivity : AppCompatActivity() {
         adapter.setDataHolders(list)
 
         //TODO 该方法放大ViewHolder的缓存，在数据量大的时候，快速滚动的时候可以适当调整缓存的数量，充分利用缓存，减少view的动态创建
+        //TODO 默认单个viewType缓存是5个，列表快速滚动的场景下，增加同类型type的缓存数量,很大提高view的复用
+        //TODO 复用view的时候，注意数据源的是否相同，避免重复绘制数据源
+        //TODO RecyclerDataHolder.updateData()方法更新数据源，参考适配器中的setHasStableIds讲解
         // setMaxRecycledViews
         rv_simple.recycledViewPool.setMaxRecycledViews(0, 100)
 
