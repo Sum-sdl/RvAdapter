@@ -27,7 +27,7 @@ public class StickyHeadDecoration extends RecyclerView.ItemDecoration {
     }
 
     //将View的margin保存到Rect中
-    public static void resolveMargin(Rect margins, View view) {
+    private static void resolveMargin(Rect margins, View view) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
 
         if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
@@ -57,7 +57,6 @@ public class StickyHeadDecoration extends RecyclerView.ItemDecoration {
             //HeadView 占位
             outRect.top = headView.getHeight() + mTempRect.top + mTempRect.bottom;
         }
-//        Logger.e("getItemOffsets:" + outRect.toString());
     }
 
     @Override
@@ -94,7 +93,6 @@ public class StickyHeadDecoration extends RecyclerView.ItemDecoration {
                 mHeadViewCalculator.resolveHeadViewBound(parent, rect, headView, childAt, hasHeadView, position);
                 drawHead(parent, headView, c, rect);
             }
-//            Logger.e("t:" + childAt.getTop() + " b:" + childAt.getBottom() + " " + position);
         }
     }
 
@@ -188,7 +186,6 @@ public class StickyHeadDecoration extends RecyclerView.ItemDecoration {
                 if (shiftFromNextHeader < topOfStickyHeader) {
                     bound.top += shiftFromNextHeader;
                 }
-//                Logger.e("change " + pos + " t:" + topOfStickyHeader + " s:" + shiftFromNextHeader + " " + nextItem.getTop());
             }
         }
 

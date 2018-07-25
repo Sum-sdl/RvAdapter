@@ -8,7 +8,7 @@ import android.view.View;
 /**
  * Created by sdl on 2017/12/29.
  */
-public abstract class OnPageScrollListener extends OnScrollListener {
+public class OnPageScrollBottomListener extends OnScrollListener {
 
     private LinearLayoutManager mManager;
     /**
@@ -16,11 +16,11 @@ public abstract class OnPageScrollListener extends OnScrollListener {
      */
     private int mRemainingCount;
 
-    public OnPageScrollListener(LinearLayoutManager manager) {
+    public OnPageScrollBottomListener(LinearLayoutManager manager) {
         this(manager, 0);
     }
 
-    public OnPageScrollListener(LinearLayoutManager manager, int remainingCount) {
+    public OnPageScrollBottomListener(LinearLayoutManager manager, int remainingCount) {
         if (manager == null) {
             throw new NullPointerException("manager == null");
         }
@@ -32,31 +32,23 @@ public abstract class OnPageScrollListener extends OnScrollListener {
     }
 
     @Override
-    public final void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-        super.onScrollStateChanged(recyclerView, newState);
-    }
-
-    @Override
     public final void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
+        if (recyclerView.getVisibility() == View.GONE) {
+            return;
+        }
         int firstVisibleItem = mManager.findFirstVisibleItemPosition();
         int visibleItemCount = mManager.getChildCount();
         int totalItemCount = mManager.getItemCount();
-        if (recyclerView.getVisibility() == View.GONE)
+        if (visibleItemCount == 0) {
             return;
-        if (visibleItemCount == 0)
-            return;
+        }
         if (firstVisibleItem + visibleItemCount + mRemainingCount >= totalItemCount) {
-            onPageScrolled(recyclerView);
-        } else {
-            onItemCount(firstVisibleItem, visibleItemCount, totalItemCount, dx, dy);
+            onPageScrolledBottom();
         }
     }
 
-    public void onItemCount(int firstVisible, int visibleCount, int totalCount, int dx, int dy) {
-    }
-
-    public void onPageScrolled(RecyclerView recyclerView) {
+    public void onPageScrolledBottom() {
     }
 
 }

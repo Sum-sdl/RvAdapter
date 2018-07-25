@@ -10,7 +10,9 @@ import com.sum.lib.rvadapter.RecyclerDataHolder;
 import java.util.List;
 
 /**
- * Created by Summer on 2016/8/27.
+ *
+ * @author Summer
+ * @date 2016/8/27
  */
 public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<RecyclerDataHolder<T>> implements StickyHeadView {
 
@@ -41,6 +43,10 @@ public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<RecyclerDa
      */
     public abstract void onBindHeaderViewHolder(View holder, int position, T data);
 
+    @Override
+    public void firstHead(long fHeadId, int fPosition) {
+
+    }
 
     @Override
     public long getHeadId(int position) {

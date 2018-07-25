@@ -1,11 +1,11 @@
 package com.sum.rvadapter
 
-import com.sum.library.app.BaseApplication
+import android.app.Application
 
 /**
  * Created by sdl on 2018/4/26.
  */
-class AppApplication : BaseApplication() {
+class AppApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

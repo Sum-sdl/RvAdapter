@@ -1,10 +1,15 @@
 package com.sum.lib.rvadapter.listener;
 
 /**
- * Created by Sum on 15/11/27.
+ * @author Sum
+ * @date 15/11/27
  */
 public interface RecycleViewCallBack<T> {
 
-    void onItemClick(int position, T t);
+    /**
+     * @param position 数据源位置
+     * @param data     对应数据项
+     */
+    void onItemClick(int position, T data);
 
 }
