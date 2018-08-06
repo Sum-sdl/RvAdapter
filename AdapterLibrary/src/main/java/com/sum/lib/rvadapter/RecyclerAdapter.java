@@ -82,6 +82,13 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         return mHolders;
     }
 
+    public DataHolder getDataHolder(int location) {
+        if (location < mHolders.size() && location > 0) {
+            return mHolders.get(location);
+        }
+        return null;
+    }
+
     protected DataHolder queryDataHolder(int location) {
         return mHolders.get(location);
     }

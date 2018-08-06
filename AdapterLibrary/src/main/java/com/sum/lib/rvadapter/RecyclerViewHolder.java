@@ -1,6 +1,7 @@
 package com.sum.lib.rvadapter;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -22,6 +23,10 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public <T extends View> T findViewById(int id) {
         return mRootView.findViewById(id);
+    }
+
+    public int getColorById(int resId) {
+        return ContextCompat.getColor(mContext, resId);
     }
 
 }
