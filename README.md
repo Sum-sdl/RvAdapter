@@ -24,8 +24,8 @@ RecyclerView 通用适配器框架结构封装
  Then, add the library to your module `build.gradle`
  ```gradle
  dependencies {
-     implementation 'com.github.Sum-sdl:RvAdapter:2.0.0'
+     implementation 'com.github.Sum-sdl:RvAdapter:2.0.1'
  }
  ```
  
-**2.0.0版本基础目录结构调整**
+**2.0.0版本后基础目录结构调整**
