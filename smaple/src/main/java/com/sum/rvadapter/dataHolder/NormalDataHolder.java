@@ -5,8 +5,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.sum.lib.rvadapter.RecyclerDataHolder;
-import com.sum.lib.rvadapter.RecyclerViewHolder;
+import com.sum.adapter.RecyclerDataHolder;
+import com.sum.adapter.RecyclerViewHolder;
 import com.sum.rvadapter.R;
 
 /**

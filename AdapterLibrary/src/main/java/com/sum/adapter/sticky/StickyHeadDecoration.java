@@ -1,4 +1,4 @@
-package com.sum.lib.rvadapter.sticky;
+package com.sum.adapter.sticky;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;

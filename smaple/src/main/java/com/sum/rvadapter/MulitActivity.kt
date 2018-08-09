@@ -3,8 +3,8 @@ package com.sum.rvadapter
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import com.sum.lib.rvadapter.RecyclerAdapter
-import com.sum.lib.rvadapter.RecyclerDataHolder
+import com.sum.adapter.RecyclerAdapter
+import com.sum.adapter.RecyclerDataHolder
 import com.sum.rvadapter.dataHolder.Normal2DataHolder
 import com.sum.rvadapter.dataHolder.NormalDataHolder
 import kotlinx.android.synthetic.main.activity_simple.*

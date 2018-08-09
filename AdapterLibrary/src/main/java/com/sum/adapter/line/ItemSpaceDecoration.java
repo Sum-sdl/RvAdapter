@@ -1,4 +1,4 @@
-package com.sum.lib.rvadapter.line;
+package com.sum.adapter.line;
 
 import android.graphics.Rect;
 import android.support.v7.widget.GridLayoutManager;
@@ -49,17 +49,15 @@ public class ItemSpaceDecoration extends RecyclerView.ItemDecoration {
             return;
         }
 
-        int right = mSpace;
+        int left = mSpace;
         int bottom = mSpace;
-        //最后一列
-        if ((itemPosition + 1) % spanCount == 0) {// 如果是最后一列，则不需要绘制右边
-            right = 0;
+        if (itemPosition % spanCount == 0) {
+            left = 0;
         }
-        //最后一行
         int lastRawStartIndex = childCount - (childCount % spanCount == 0 ? 3 : childCount % spanCount);
         if (itemPosition >= lastRawStartIndex) {// 如果是最后一行，则不需要绘制底部
             bottom = 0;
         }
-        outRect.set(0, 0, right, bottom);
+        outRect.set(left, 0, 0, bottom);
     }
 }

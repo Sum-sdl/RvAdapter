@@ -1,4 +1,4 @@
-package com.sum.lib.rvadapter;
+package com.sum.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -85,6 +85,13 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
     public DataHolder getDataHolder(int location) {
         if (location < mHolders.size() && location > 0) {
             return mHolders.get(location);
+        }
+        return null;
+    }
+
+    public Object getItemData(int location) {
+        if (location < mHolders.size() && location > 0) {
+            return mHolders.get(location).getData();
         }
         return null;
     }

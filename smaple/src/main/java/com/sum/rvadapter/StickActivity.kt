@@ -5,9 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.TextView
-import com.sum.lib.rvadapter.RecyclerDataHolder
-import com.sum.lib.rvadapter.sticky.StickRecyclerAdapter
-import com.sum.lib.rvadapter.sticky.StickyHeadDecoration
+import com.sum.adapter.RecyclerDataHolder
+import com.sum.adapter.sticky.StickRecyclerAdapter
+import com.sum.adapter.sticky.StickyHeadDecoration
 import com.sum.rvadapter.dataHolder.NormalDataHolder
 import com.sum.rvadapter.dataHolder.StickDataHolder
 import kotlinx.android.synthetic.main.activity_simple.*
