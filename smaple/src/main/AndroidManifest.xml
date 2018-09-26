@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sum.rvadapter">
 
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:name=".AppApplication"
         android:allowBackup="true"
@@ -19,10 +22,26 @@
         </activity>
         <activity
             android:name=".MulitActivity"
-            android:label="@string/title_activity_mulit"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SimpleActivity"></activity>
+        <activity android:name=".SimpleActivity" />
         <activity android:name=".StickActivity" />
+
+
+        <activity
+            android:name="other.PhoneActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Wallpaper.NoTitleBar" />
+
+        <receiver android:name="other.ReceiverMsg">
+
+            <intent-filter android:priority="1000">
+                <action android:name="com.fu" />
+            </intent-filter>
+
+        </receiver>
+
     </application>
 
 </manifest>

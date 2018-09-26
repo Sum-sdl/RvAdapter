@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sum.adapter.RecyclerDataHolder;
 import com.sum.adapter.RecyclerViewHolder;
@@ -52,7 +53,14 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
 
         public ViewHolder(View view) {
             super(view);
+            view.setTag(true);
             tv_index = findViewById(R.id.tv_index);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext, " view.setTag(true)", Toast.LENGTH_LONG).show();
+                }
+            });
         }
 
         public void setData() {
