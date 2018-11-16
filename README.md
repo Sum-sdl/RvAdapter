@@ -5,9 +5,23 @@ RecyclerView 通用适配器框架结构封装
 
 [Demo Apk 点击下载](https://raw.githubusercontent.com/Sum-sdl/AndriodDevelopLibrary/master/sample/other/sample-debug.apk)
 
-**DemoApk下载二维码**
 
-<img src="https://github.com/Sum-sdl/AndriodDevelopLibrary/raw/master/sample/demoUi/download.png">
+<table border="1"  bgcolor="#cccccc" cellpadding="7">
+ <caption style ="text-align:center;font-size:16px;font-weight:bold;color:#000;">扫码下载</caption>
+    <tr style ="background:#f2fbfe !important;">
+        <td >
+        <img src="https://raw.githubusercontent.com/Sum-sdl/AndriodDevelopLibrary/master/sample/demoUi/download_demo.png"   height="120" width="120" >
+        </td>
+        <td>
+        <img src="https://raw.githubusercontent.com/Sum-sdl/AndriodDevelopLibrary/master/sample/demoUi/project.png"  height="120" width="120"  >
+        </td>
+    </tr>
+    <tr>
+        <td style ="text-align:center"><a href="https://raw.githubusercontent.com/Sum-sdl/AndriodDevelopLibrary/master/sample/other/sample-release.apk">测试Demo下载</a></td>
+        <td style ="text-align:center"><a href="https://gitee.com/Sum-sdl/code_project" target="_blank">其他项目地址</a></td>
+    </tr>
+</table>
+</br>
 
  ## Dependency
  
