@@ -89,9 +89,9 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         return null;
     }
 
-    public Object getItemData(int location) {
+    public <T> T getItemData(int location) {
         if (location < mHolders.size() && location > 0) {
-            return mHolders.get(location).getData();
+            return (T) mHolders.get(location).getData();
         }
         return null;
     }

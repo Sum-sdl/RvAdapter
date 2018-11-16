@@ -7,7 +7,7 @@ RecyclerView 通用适配器框架结构封装
 
 **DemoApk下载二维码**
 
-<img src="https://github.com/Sum-sdl/AndriodDevelopLibrary/blob/master/sample/demoUi/download.png">
+<img src="https://github.com/Sum-sdl/AndriodDevelopLibrary/raw/master/sample/demoUi/download.png">
 
  ## Dependency
  
@@ -24,8 +24,10 @@ RecyclerView 通用适配器框架结构封装
  Then, add the library to your module `build.gradle`
  ```gradle
  dependencies {
-     implementation 'com.github.Sum-sdl:RvAdapter:2.0.1'
+     implementation 'com.github.Sum-sdl:RvAdapter:2.0.2'
  }
  ```
  
 **2.0.0版本后基础目录结构调整**
+
+2.0.2：整理代码，发布文章介绍一下

@@ -58,7 +58,7 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, " view.setTag(true)", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, " view.setTag(true)->" + getAdapterPosition(), Toast.LENGTH_LONG).show();
                 }
             });
         }

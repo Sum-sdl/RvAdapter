@@ -1,4 +1,4 @@
-package com.sum.rvadapter;
+package other;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

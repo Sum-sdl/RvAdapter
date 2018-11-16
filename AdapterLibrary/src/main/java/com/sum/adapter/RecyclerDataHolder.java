@@ -25,12 +25,15 @@ public abstract class RecyclerDataHolder<T> {
         mId = super.hashCode();
     }
 
-    int getId() {
+    /**
+     * 用来设置RecyclerView的getItemId，跟Rv里面的mHasStableIds有关
+     */
+    protected int getId() {
         return mId;
     }
 
     /**
-     * onBindViewHolder只绑定一次(适用于一个单个view对应一个数据项，可以避免多次刷新)
+     * onBindViewHolder只执行一次(适用于一个单个view对应一个数据项，可以避免item每次可见的时候刷新)
      */
     protected boolean isSingleBindView() {
         return false;

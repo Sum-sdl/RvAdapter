@@ -1,13 +1,14 @@
 package com.sum.adapter.line;
 
 import android.graphics.Rect;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
  * Created by Sum on 18/7/30.
- * 行间距
+ * 很有用的类，用来设置RecyclerView的行间距
  */
 
 public class ItemSpaceDecoration extends RecyclerView.ItemDecoration {
@@ -31,7 +32,7 @@ public class ItemSpaceDecoration extends RecyclerView.ItemDecoration {
     }
 
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+    public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
 
         int childCount = parent.getAdapter().getItemCount();
         int itemPosition = parent.getChildAdapterPosition(view);
