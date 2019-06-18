@@ -36,7 +36,7 @@ public class Normal2DataHolder extends RecyclerDataHolder<Object> {
         //TODO 给组合View设置参数操作;思考怎么避免重复操作
         holder.setData();
 
-        holder.tv_index.setText("DataHolder2 onBindViewHolder POS:" + i);
+//        holder.tv_index.setText("DataHolder2 onBindViewHolder POS:" + i);
     }
 
     //该ViewHolder就是RecyclerView的每个内容View
@@ -51,6 +51,7 @@ public class Normal2DataHolder extends RecyclerDataHolder<Object> {
         }
 
         public void setData() {
+            setTextViewText(R.id.tv_index, "Hell0000000");
         }
     }
 }

@@ -27,7 +27,7 @@ RecyclerView 通用适配器框架结构封装
  
  ```gradle
  dependencies {
-     implementation 'com.github.Sum-sdl:RvAdapter:2.1.0'
+     implementation 'com.github.Sum-sdl:RvAdapter:2.1.1'
  }
  ```
  
