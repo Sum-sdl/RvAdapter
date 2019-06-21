@@ -54,8 +54,15 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setTextViewText(int textViewId, CharSequence text) {
+        setTextViewText(textViewId, text, -1);
+    }
+
+    public void setTextViewText(int textViewId, CharSequence text, int colorResId) {
         TextView tv = findViewById(textViewId);
         changeText(text, tv);
+        if (colorResId != -1) {
+            tv.setTextColor(getColorByResId(colorResId));
+        }
     }
 
     public void setTextViewColor(int textViewId, int colorResId) {
