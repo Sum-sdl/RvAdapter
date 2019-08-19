@@ -121,19 +121,14 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
     public final ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         DataHolder holder = queryDataHolder(mCurPosition);
         View view = holder.onCreateView(parent.getContext(), parent);
-        holder.mHasBindView = false;
         return holder.onCreateViewHolder(view, mCurPosition);
     }
 
     @Override
     public final void onBindViewHolder(@NonNull ViewHolder vHolder, int position) {
         DataHolder holder = queryDataHolder(position);
-        if (holder.isSingleBindView() && holder.mHasBindView) {
-            return;
-        }
         holder.addRecyclerAdapter(this);
         holder.onBindViewHolder(position, vHolder, holder.getData());
-        holder.mHasBindView = true;
     }
 
 }

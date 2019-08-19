@@ -18,25 +18,25 @@ public abstract class RecyclerDataHolder<T> {
     private int mId;
     private RecyclerAdapter mAdapter;
 
-    boolean mHasBindView = false;
+    protected RecyclerCallBack<T> mCallback;
 
     public RecyclerDataHolder(T data) {
         mData = data;
-        mId = super.hashCode();
+        mId = -1;
+    }
+
+    public RecyclerDataHolder setRecyclerCallback(RecyclerCallBack<T> callback) {
+        this.mCallback = callback;
+        return this;
     }
 
     /**
-     * 用来设置RecyclerView的getItemId，跟Rv里面的mHasStableIds有关
+     * 用来设置RecyclerView的getItemId
+     * 默认-1，标识同一个一个数据源的唯一性，根据ViewType来复用同一个View
+     * 自定义id，会复用同一个View，缓存的View效率更快
      */
     protected int getId() {
         return mId;
-    }
-
-    /**
-     * onBindViewHolder只执行一次(适用于一个单个view对应一个数据项，可以避免item每次可见的时候刷新)
-     */
-    protected boolean isSingleBindView() {
-        return false;
     }
 
     /**
@@ -68,13 +68,4 @@ public abstract class RecyclerDataHolder<T> {
         return mData;
     }
 
-    public RecyclerDataHolder updateData(T newData) {
-        mData = newData;
-        mHasBindView = false;
-        return this;
-    }
-
-    public void resetBindView() {
-        mHasBindView = false;
-    }
 }
