@@ -24,13 +24,9 @@ RecyclerView 通用适配器框架结构封装
 </br>
 
  ## Dependency
- 
+ [ ![Download](https://api.bintray.com/packages/sum-sdl/AndroidDevLibrary/RvAdapter/images/download.svg) ](https://bintray.com/sum-sdl/AndroidDevLibrary/RvAdapter/_latestVersion)
  ```gradle
  dependencies {
-     implementation 'com.github.Sum-sdl:RvAdapter:2.1.2'
+     implementation 'com.github.Sum-sdl:RvAdapter:2.2.0'
  }
  ```
- 
-**2.0.0 版本后基础目录结构调整**
-
-**2.1.0 发布到JCenter仓库，目前功能稳定，后期功能升级应该比较少**
