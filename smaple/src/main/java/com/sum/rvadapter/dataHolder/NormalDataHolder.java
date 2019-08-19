@@ -20,6 +20,14 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
         super(data);
     }
 
+    @Override
+    protected int getId() {
+        if (getData() instanceof Integer) {
+            return (int) getData();
+        }
+        return -1;
+    }
+
     //一个type值，对应一组类型的ViewHolder，同一种内容的View
     // 多种不一样的Item，需要配置不一样的type，一个type对应一个内容View
     @Override

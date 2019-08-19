@@ -3,6 +3,7 @@ package com.sum.rvadapter
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
+import android.widget.Toast
 import com.sum.adapter.RecyclerAdapter
 import com.sum.adapter.RecyclerDataHolder
 import com.sum.rvadapter.dataHolder.NormalDataHolder
@@ -37,6 +38,17 @@ class SimpleActivity : AppCompatActivity() {
         //TODO RecyclerDataHolder.updateData()方法更新数据源，参考适配器中的setHasStableIds讲解
         // setMaxRecycledViews
         rv_simple.recycledViewPool.setMaxRecycledViews(0, 100)
+
+
+        btn_refresh.setOnClickListener {
+            //适配器添加统一类型的Item
+            val list1 = arrayListOf<RecyclerDataHolder<*>>()
+            for (i in 99..200) {
+                list1.add(NormalDataHolder(i))
+            }
+            Toast.makeText(this, "refresh", Toast.LENGTH_SHORT).show()
+            adapter.setDataHolders(list1)
+        }
 
     }
 }

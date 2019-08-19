@@ -22,7 +22,7 @@ public abstract class RecyclerDataHolder<T> {
 
     public RecyclerDataHolder(T data) {
         mData = data;
-        mId = -1;
+        mId = super.hashCode();
     }
 
     public RecyclerDataHolder setRecyclerCallback(RecyclerCallBack<T> callback) {
