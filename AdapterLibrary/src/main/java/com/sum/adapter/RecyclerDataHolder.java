@@ -31,9 +31,9 @@ public abstract class RecyclerDataHolder<T> {
     }
 
     /**
-     * 用来设置RecyclerView的getItemId
-     * 默认-1，标识同一个一个数据源的唯一性，根据ViewType来复用同一个View
-     * 自定义id，会复用同一个View，缓存的View效率更快
+     * 标识同一个数据源的唯一性
+     * 设置RecyclerView的getItemId默认-1，setHasStableIds(false) 根据ViewType来复用同一个View
+     * 自定义一个数据源一个固定的id，会复用同一个View
      */
     protected int getId() {
         return mId;
