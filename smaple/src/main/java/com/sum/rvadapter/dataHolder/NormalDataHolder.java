@@ -1,6 +1,6 @@
 package com.sum.rvadapter.dataHolder;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -18,14 +18,6 @@ public class NormalDataHolder extends RecyclerDataHolder<Object> {
 
     public NormalDataHolder(Object data) {
         super(data);
-    }
-
-    @Override
-    protected int getId() {
-        if (getData() instanceof Integer) {
-            return (int) getData();
-        }
-        return -1;
     }
 
     //一个type值，对应一组类型的ViewHolder，同一种内容的View

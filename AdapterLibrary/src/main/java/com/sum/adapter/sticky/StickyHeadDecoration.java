@@ -2,8 +2,8 @@ package com.sum.adapter.sticky;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.support.v4.util.LongSparseArray;
-import android.support.v7.widget.RecyclerView;
+import androidx.collection.LongSparseArray;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;

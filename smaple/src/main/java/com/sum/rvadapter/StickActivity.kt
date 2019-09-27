@@ -1,8 +1,8 @@
 package com.sum.rvadapter
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import android.widget.TextView
 import com.sum.adapter.RecyclerDataHolder
@@ -23,7 +23,7 @@ class StickActivity : AppCompatActivity() {
         setContentView(R.layout.activity_mulit)
 
         val adapter = Stick()
-        rv_simple.layoutManager = LinearLayoutManager(this)
+        rv_simple.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_simple.adapter = adapter
         rv_simple.setHasFixedSize(true)
         rv_simple.addItemDecoration(StickyHeadDecoration(adapter))

@@ -1,8 +1,8 @@
 package com.sum.rvadapter
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import android.widget.Toast
 import com.sum.adapter.RecyclerAdapter
 import com.sum.adapter.RecyclerDataHolder
@@ -21,7 +21,7 @@ class SimpleActivity : AppCompatActivity() {
         //TODO 性能优化，最费时的是view实例化过程和计算测量
         //TODO 经过测试，RecyclerView不需要手动设置布局高度，在NestedScrollView中高度设置warp_content即可
         //TODO ScrollView中无效
-        rv_simple.layoutManager = GridLayoutManager(this, 1)
+        rv_simple.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 1)
         rv_simple.adapter = adapter
         rv_simple.isNestedScrollingEnabled = false
 
