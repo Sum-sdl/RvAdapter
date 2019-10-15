@@ -14,9 +14,9 @@ import java.util.List;
  * @date 2016/8/29
  * 全局通用适配器
  */
-public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends RecyclerView.Adapter<ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
 
-    private List<DataHolder> mHolders;
+    private List<RecyclerDataHolder> mHolders;
     private int mCurPosition;
 
     public RecyclerAdapter() {
@@ -24,7 +24,7 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         setHasStableIds(true);
     }
 
-    public RecyclerAdapter(List<DataHolder> holders) {
+    public RecyclerAdapter(List<RecyclerDataHolder> holders) {
         if (holders != null) {
             mHolders = new ArrayList<>(holders.size() + 10);
             mHolders.addAll(holders);
@@ -32,7 +32,7 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         setHasStableIds(true);
     }
 
-    public void setDataHolders(List<DataHolder> holders) {
+    public void setDataHolders(List<RecyclerDataHolder> holders) {
         if (holders == null) {
             mHolders = new ArrayList<>();
         } else {
@@ -42,23 +42,23 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         notifyDataSetChanged();
     }
 
-    public void addDataHolder(DataHolder holder) {
+    public void addDataHolder(RecyclerDataHolder holder) {
         mHolders.add(holder);
         notifyItemInserted(mHolders.size() - 1);
     }
 
-    public void addDataHolder(int location, DataHolder holder) {
+    public void addDataHolder(int location, RecyclerDataHolder holder) {
         mHolders.add(location, holder);
         notifyItemInserted(location);
     }
 
-    public void addDataHolder(List<DataHolder> holders) {
+    public void addDataHolder(List<RecyclerDataHolder> holders) {
         int location = mHolders.size();
         mHolders.addAll(holders);
         notifyItemRangeInserted(location, holders.size());
     }
 
-    public void addDataHolder(int location, List<DataHolder> holders) {
+    public void addDataHolder(int location, List<RecyclerDataHolder> holders) {
         mHolders.addAll(location, holders);
         notifyItemRangeInserted(location, holders.size());
     }
@@ -70,7 +70,7 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         }
     }
 
-    public void removeDataHolder(DataHolder holder) {
+    public void removeDataHolder(RecyclerDataHolder holder) {
         int index = mHolders.indexOf(holder);
         if (index != -1) {
             mHolders.remove(index);
@@ -78,11 +78,11 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         }
     }
 
-    public List<DataHolder> getDataHolders() {
+    public List<RecyclerDataHolder> getDataHolders() {
         return mHolders;
     }
 
-    public DataHolder getDataHolder(int location) {
+    public RecyclerDataHolder getDataHolder(int location) {
         if (location < mHolders.size() && location > 0) {
             return mHolders.get(location);
         }
@@ -96,7 +96,7 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
         return null;
     }
 
-    protected DataHolder queryDataHolder(int location) {
+    protected RecyclerDataHolder queryDataHolder(int location) {
         return mHolders.get(location);
     }
 
@@ -119,14 +119,14 @@ public class RecyclerAdapter<DataHolder extends RecyclerDataHolder> extends Recy
     @NonNull
     @Override
     public final ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        DataHolder holder = queryDataHolder(mCurPosition);
+        RecyclerDataHolder holder = queryDataHolder(mCurPosition);
         View view = holder.onCreateView(parent.getContext(), parent);
         return holder.onCreateViewHolder(view, mCurPosition);
     }
 
     @Override
     public final void onBindViewHolder(@NonNull ViewHolder vHolder, int position) {
-        DataHolder holder = queryDataHolder(position);
+        RecyclerDataHolder holder = queryDataHolder(position);
         holder.addRecyclerAdapter(this);
         holder.onBindViewHolder(position, vHolder, holder.getData());
     }

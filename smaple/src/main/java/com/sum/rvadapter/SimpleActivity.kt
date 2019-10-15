@@ -15,7 +15,7 @@ class SimpleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_simple1)
 
-        val adapter = RecyclerAdapter<RecyclerDataHolder<*>>()
+        val adapter = RecyclerAdapter()
 //        rv_simple.layoutManager = LinearLayoutManager(this)
         //TODO 高度自动计算的布局用来代替部分一次性展示场景
         //TODO 性能优化，最费时的是view实例化过程和计算测量

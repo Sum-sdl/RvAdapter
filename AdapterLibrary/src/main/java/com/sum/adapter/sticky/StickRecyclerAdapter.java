@@ -14,13 +14,13 @@ import java.util.List;
  * @author Summer
  * @date 2016/8/27
  */
-public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<RecyclerDataHolder<T>> implements StickyHeadView {
+public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter implements StickyHeadView {
 
     public StickRecyclerAdapter() {
         super();
     }
 
-    public StickRecyclerAdapter(List<RecyclerDataHolder<T>> recyclerDataHolders) {
+    public StickRecyclerAdapter(List<RecyclerDataHolder> recyclerDataHolders) {
         super(recyclerDataHolders);
     }
 
@@ -50,7 +50,7 @@ public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<RecyclerDa
 
     @Override
     public long getHeadId(int position) {
-        return headId(position, queryDataHolder(position).getData());
+        return headId(position, (T) queryDataHolder(position).getData());
     }
 
     @Override
@@ -60,7 +60,7 @@ public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter<RecyclerDa
 
     @Override
     public void onBindHeadView(View headView, int position) {
-        onBindHeaderViewHolder(headView, position, queryDataHolder(position).getData());
+        onBindHeaderViewHolder(headView, position, (T) queryDataHolder(position).getData());
     }
 
     /**

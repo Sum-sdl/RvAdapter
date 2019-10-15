@@ -16,7 +16,7 @@ class MulitActivity : AppCompatActivity() {
         setContentView(R.layout.activity_mulit)
 
 
-        val adapter = RecyclerAdapter<RecyclerDataHolder<*>>()
+        val adapter = RecyclerAdapter()
         rv_simple.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_simple.adapter = adapter
 
