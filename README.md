@@ -29,6 +29,6 @@ RecyclerView 通用适配器框架结构封装
  升级为 AndroidX
  ```gradle
      dependencies {
-         implementation 'com.github.Sum-sdl:RvAdapter:3.0.1'
+         implementation 'com.github.Sum-sdl:RvAdapter:3.0.2'
      }
      ```

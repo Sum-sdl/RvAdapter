@@ -13,7 +13,7 @@ archivesBaseName = ARTIFACT_ID
 //./gradlew install 本地构建
 //./gradlew bintrayUpload 上传代码到远程仓库
 //远程仓库版本
-version = "3.0.1"
+version = "3.0.2"
 
 install {
     repositories.mavenInstaller {
