@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SpaceActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,8 +26,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SimpleActivity" />
         <activity android:name=".StickActivity" />
-
-
         <activity
             android:name="other.PhoneActivity"
             android:excludeFromRecents="true"
@@ -35,13 +34,10 @@
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar" />
 
         <receiver android:name="other.ReceiverMsg">
-
             <intent-filter android:priority="1000">
                 <action android:name="com.fu" />
             </intent-filter>
-
         </receiver>
-
     </application>
 
 </manifest>

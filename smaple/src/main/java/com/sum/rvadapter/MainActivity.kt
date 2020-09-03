@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, StickActivity::class.java))
         }
 
+        btn_4.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SpaceActivity::class.java))
+        }
+
         //锁屏消息界面
 //        btn_3.postDelayed(({ send("新消息1") }), 5000)
 //        btn_3.postDelayed(({ send("新消息2") }), 12000)

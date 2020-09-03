@@ -10,7 +10,6 @@ import com.sum.adapter.RecyclerDataHolder;
 import java.util.List;
 
 /**
- *
  * @author Summer
  * @date 2016/8/27
  */
@@ -50,7 +49,7 @@ public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter implements
 
     @Override
     public long getHeadId(int position) {
-        return headId(position, (T) queryDataHolder(position).getData());
+        return headId(position, (T) getItemData(position));
     }
 
     @Override
@@ -60,7 +59,7 @@ public abstract class StickRecyclerAdapter<T> extends RecyclerAdapter implements
 
     @Override
     public void onBindHeadView(View headView, int position) {
-        onBindHeaderViewHolder(headView, position, (T) queryDataHolder(position).getData());
+        onBindHeaderViewHolder(headView, position, (T) getItemData(position));
     }
 
     /**

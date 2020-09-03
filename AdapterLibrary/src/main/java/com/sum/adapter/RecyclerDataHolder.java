@@ -1,10 +1,11 @@
 package com.sum.adapter;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 统一预处理的数据源,对应一个缓存中的ViewType
@@ -40,6 +41,13 @@ public abstract class RecyclerDataHolder<T> {
     }
 
     /**
+     * 默认采用布局id作为一中ViewType,保证多类型使用,子类可以重写手动设置一个holder类型
+     */
+    protected int getType() {
+        return getItemViewLayoutId();
+    }
+
+    /**
      * 列表item的layout布局id
      */
     protected abstract int getItemViewLayoutId();
@@ -52,19 +60,18 @@ public abstract class RecyclerDataHolder<T> {
         return LayoutInflater.from(context).inflate(getItemViewLayoutId(), parent, false);
     }
 
-    void addRecyclerAdapter(RecyclerAdapter adapter) {
-        mAdapter = adapter;
-    }
-
+    //部分场景便捷使用
     protected RecyclerAdapter getRecyclerAdapter() {
         return mAdapter;
     }
 
-    protected int getType() {
-        return getItemViewLayoutId();
+    //内部使用
+    void addRecyclerAdapter(RecyclerAdapter adapter) {
+        mAdapter = adapter;
     }
 
-    public T getData() {
+    //内部使用
+    T getData() {
         return mData;
     }
 
